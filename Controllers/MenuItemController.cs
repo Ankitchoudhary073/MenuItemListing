@@ -45,11 +45,16 @@ namespace MenuItemListing.Controllers
                     Active=true
                 }
             };
+        public List<string> li = new List<string>();
         // GET: api/<MenuItemController>
         [HttpGet]
-        public IEnumerable<MenuItem> Get()
+        public List<string> Get()
         {
-           return menuitem;
+            for(int i=0;i<menuitem.Count;i++)
+            {
+                li.Add(menuitem[i].Name);
+            }
+            return li;
         }
 
         // GET api/<MenuItemController>/5
